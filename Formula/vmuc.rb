@@ -12,6 +12,13 @@ class Vmuc < Formula
   # No `head`: the guest kernel and agent below come from a release, and a
   # build of main would pair new host code with an older agent.
 
+  bottle do
+    root_url "https://github.com/giejqf/homebrew-vmuc/releases/download/vmuc-0.1.0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "890e8ab8f06dda2549be5145321e1de3b0adff159e76b685c88b7c3c4a7fc28a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "05a6dbf1a43d92f92b95916dd5948c7068018688a0c7dee0bb56a8485eb01e1d"
+  end
+
   depends_on "rust" => :build
   depends_on arch: :arm64
   depends_on macos: :sequoia
